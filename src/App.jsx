@@ -1,6 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import logo from './assets/logor.jpg'
+import logo from './assets/logo.jpg'
+import jempol from './assets/jempol.jpg'
+import chat from './assets/chat.jpg'
+import share from './assets/share.jpg'
+import K from './assets/K.jpg'
+import notif2 from './assets/notif2.jpg'
+import house from './assets/house.jpg'
+import profile from './assets/profile.jpg'
+import T from './assets/T.jpg'
+import verified from './assets/verified.jpg'
+
 import React from 'react';
 import './App.css';
 
@@ -14,15 +22,38 @@ const App = () => {
   );
 };
 
+
+
+
 const Sidebar = () => (
+  
   <div className="sidebar">
-    <div className="logo">SOCIO</div>
     <nav>
-      <ul>
-        <li>Home</li>
-        <li>Notification</li>
-        <li>Messages</li>
-        <li>Profile</li>
+      <ul className='allsidebar'>
+        <div>
+          <p className='SOCIO' >SOCIO.</p>
+        </div>
+        <div className='Navhouse'>
+          <img className='house' src={house}></img>
+          <li className='Home' >Home</li>
+        </div>
+
+
+        <div className='Navnotif'>
+          <img className='notif' src={notif2}></img>
+          <li>Notification</li>
+        </div>
+
+
+        <div className='NavMessages'>
+          <img className='messages' src={chat}></img>
+          <li>Messages</li>
+        </div>
+
+        <div className='NavProfile'>
+          <img className='profile' src={profile}></img>
+          <li>Profile</li>
+        </div>
       </ul>
     </nav>
     <button className="trending-button">Trending</button>
@@ -32,6 +63,7 @@ const Sidebar = () => (
 const MainContent = () => (
   <div className="main-content">
     <div className="post-section">
+      <img className='K' src={K}></img>
       <input type="text" placeholder="What happened today?" />
       <button className="share-button">Share</button>
     </div>
@@ -47,9 +79,21 @@ const Post = ({ username, time, content }) => (
     <strong>{username}</strong> {time}
     <p>{content}</p>
     <div className="engagement">
-      <span>0</span>
-      <span>10</span>
-      <span>10</span>
+
+      <div className='zero'>
+        <img className='jempol' src={jempol}></img>
+        <span>0</span>
+      </div>
+
+      <div className='ten'>
+        <img className='chat' src={chat}></img>
+        <span>10</span>
+      </div>
+
+      <div className='secondten'>
+        <img className='share' src={share}></img>
+        <span>10</span>
+      </div>
     </div>
   </div>
 );
@@ -59,7 +103,8 @@ const FollowSuggestions = () => (
     <h3>Who to follow</h3>
 
     <ul className='gambarone'>
-      <li>tereke7319</li>
+      <img className='gambart' src={T}></img>
+      <li className='tereke' > tereke7319  +</li>
     </ul>
 
 
@@ -67,6 +112,10 @@ const FollowSuggestions = () => (
       <img className='gambarKK' src={logo}></img>
       <li className='rageyo'  >rageyoc579   +</li>
     </ul>
+
+    <div className='navsee'>
+      <p  className='seemore' >See More</p>
+    </div>
   </div>
 );
 
